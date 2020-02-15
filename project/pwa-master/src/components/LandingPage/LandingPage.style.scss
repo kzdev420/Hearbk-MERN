@@ -1,0 +1,158 @@
+@import "../../scss/common.styles.scss";
+
+.landingPageContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.subTitle {
+    font-weight: 300;
+    font-size: 20px;
+    color: $main-2;
+    margin-top: 15px;
+}
+
+.mainHeader {
+    margin-top: 3px;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: $main-3;
+}
+
+.mainText {
+    margin-top: 15px;
+    font-size: $font-size-normal;
+    font-weight: 300;
+    color: $main-4;
+}
+
+.sectionContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 25px 50px 25px;
+}
+
+.headingContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: url('../../assets/img/headingBG.png');
+    padding: 0px 34px 50px 34px;
+    background-size: contain;
+    color: $main-1;
+    .mainHeading {
+        margin-top: 66px;
+        text-align: left;
+        font-weight: 300;
+        letter-spacing: 1.2px;
+        font-size: $font-size-xxl;
+    }
+    .mainDescription {
+        margin-top: 32px;
+        text-align: left;
+        font-size: $font-size-normal;
+        line-height: 24px;
+        font-weight: 300;
+    }
+    .silverButtonContainer {
+        margin-top: 42px;
+        margin-bottom: 50px;
+        border: 1px solid;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $main-9;
+        .silverLaunchButton {
+            height: 50px;
+            max-width:324px;
+            width: 100%;
+            border: none;
+            color: $main-1;
+            background-color: inherit;
+        }
+
+    }
+}
+
+.listenMusicContainer {
+    @extend .sectionContainer;
+    .listenMusicIconContainer {
+        margin-top: 68px;
+        .listenMusicIcon {
+            height: 40px;
+            width: 40px;
+        }
+    }
+    .listenMusicSubTitle {
+        @extend .subTitle;
+    }
+    .listenMusicHeader {
+       @extend .mainHeader;
+    }
+    .listenMusicDescription {
+        @extend .mainText
+    }
+}
+
+.matterMostContainer {
+    @extend .sectionContainer;
+    background-color: $main-5;
+    .matterMostIconContainer {
+        margin-top: 55px;
+        .matterMostIcon {
+            height: 40px;
+            width: 40px;
+        }
+    }
+    .matterMostSubtitle {
+        @extend .subTitle;
+    }
+    .matterMostHeader {
+        @extend .mainHeader;
+    }
+    .matterMostDescription {
+        @extend .mainText;
+    }
+}
+
+.musicianFirstContainer {
+    margin-top: 68px;
+    position: relative;
+    @extend .sectionContainer;
+    .musicianFirstIconContainer {
+        .musicianFirstIcon {
+            height: 40px;
+            width: 40px;
+        }
+    }
+    .musicianFirstSubtitle {
+        @extend .subTitle;
+    }
+    .musicianFirstHeader {
+        @extend .mainHeader;
+    }
+    .musicianFirstDescription {
+        @extend .mainText;
+    }
+}
+
+.hearBKFooter {
+    position: relative;
+    background-color: $main-5;
+    display: flex;
+    height: 147px;
+    align-items: center;
+    justify-content: center;
+
+    .buttonWrapper {
+        position: absolute;
+        top: -20px;
+        width: 90%;
+        .landingPageLaunchButton {
+            @extend .launchButton;
+            width: 100%;
+        }
+    }
+}
+

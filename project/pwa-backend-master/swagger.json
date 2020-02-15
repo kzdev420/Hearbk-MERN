@@ -1,0 +1,401 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "HEARBK Backend",
+    "description": "HearBK ",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Users",
+      "description": "API for users in the system"
+    },
+    {
+      "name": "Orders",
+      "description": "Submit and pay for a HIT"
+    },
+    {
+      "name": "Genres",
+      "description": "Submit and pay for a HIT"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/users/register": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "description": "Register a new user",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to create",
+            "schema": {
+              "$ref": "#/definitions/RegisterUser"
+            }
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "New user is created",
+            "schema": {
+              "$ref": "#/definitions/SuccessMessage"
+            }
+          }
+        }
+      }
+    },
+    "/users/authenicate": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "description": "Authenticate a new user",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User login api",
+            "schema": {
+              "$ref": "#/definitions/AuthenticateRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Token details",
+            "schema": {
+              "$ref": "#/definitions/AuthToken"
+            }
+          }
+        }
+      }
+    },
+    "/users": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "description": "Update details of a new user",
+        "parameters": [
+          {
+            "name": "x-access-token",
+            "in": "header",
+            "schema": {
+              "$ref": "#/definitions/AuthTokenHeader"
+            }
+          },
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User login api",
+            "schema": {
+              "$ref": "#/definitions/RegisterUser"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Token details",
+            "schema": {
+              "$ref": "#/definitions/SuccessMessage"
+            }
+          }
+        }
+      }
+    },
+    "/users/upload/profile-image": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "description": "User profile image File Upload",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "x-access-token",
+            "in": "header",
+            "schema": {
+              "$ref": "#/definitions/AuthTokenHeader"
+            }
+          },
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User profile image File Upload",
+            "schema": {
+              "$ref": "#/definitions/UserProfileUpload"
+            }
+          }
+        ],
+        "responses": {
+          "201": {}
+        }
+      }
+    },
+    "/orders/feedback": {
+      "post": {
+        "tags": [
+          "Orders"
+        ],
+        "description": "Submit a hit",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-access-token",
+            "in": "header",
+            "schema": {
+              "$ref": "#/definitions/AuthTokenHeader"
+            }
+          },
+          {
+            "name": "order",
+            "in": "body",
+            "description": "Hit details to be submitted",
+            "schema": {
+              "$ref": "#/definitions/OrderPayload"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "feedbackId": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/order/upload/feedback/:feedbackId": {
+      "post": {
+        "tags": [
+          "Orders"
+        ],
+        "description": "Feedback track File Upload",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "x-access-token",
+            "in": "header",
+            "schema": {
+              "$ref": "#/definitions/AuthTokenHeader"
+            }
+          },
+          {
+            "name": "feedbackId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "body",
+            "description": "Track Upload",
+            "schema": {
+              "$ref": "#/definitions/TrackUpload"
+            }
+          }
+        ],
+        "responses": {
+          "202": {}
+        }
+      }
+    },
+    "/genres": {
+      "get": {
+        "tags": [
+          "Genres"
+        ],
+        "description": "Get all genres",
+        "responses": {
+          "200": {
+            "description": "All generes",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CommonItem"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "RegisterUser": {
+      "type": "object",
+      "required": [
+        "email",
+        "user_name",
+        "display_name",
+        "password"
+      ],
+      "properties": {
+        "user_name": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "email": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "display_name": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "SuccessMessage": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "AuthenticateRequest": {
+      "type": "object",
+      "required": [
+        "email",
+        "password"
+      ],
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "AuthToken": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        }
+      }
+    },
+    "AuthTokenHeader": {
+      "type": "string",
+      "example": "<access_token>"
+    },
+    "UserProfileUpload": {
+      "type": "object",
+      "properties": {
+        "profileImg": {
+          "type": "string",
+          "format": "binary"
+        }
+      }
+    },
+    "OrderPayload": {
+      "type": "object",
+      "properties": {
+        "saveCardDetails": {
+          "type": "boolean"
+        },
+        "mediaType": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "number"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "cardInformation": {
+          "type": "object",
+          "description": "Object return by Stripe UI element"
+        },
+        "trackTitle": {
+          "type": "string"
+        },
+        "trackUrl": {
+          "type": "string"
+        },
+        "paymentToken": {
+          "type": "string",
+          "description": "Id return by Stripe UI element"
+        }
+      },
+      "example": {
+        "saveCardDetails": false,
+        "mediaType": "YOU_TUBE OR FILE_UPLOAD",
+        "trackTile": "Great One",
+        "trackUrl": "<youtube_url>",
+        "cardInformation": {
+          "type": "card",
+          "card": {
+            "number": "4242424242424242",
+            "exp_month": 12,
+            "exp_year": 2020,
+            "cvc": "123"
+          },
+          "amount": 1,
+          "currency": "USD",
+          "paymentToken": "tok_1FrB4HGH5VPqVZOrdFzofvN4"
+        }
+      }
+    }, 
+    "TrackUpload": {
+      "type": "object",
+      "properties": {
+        "trackUpload": {
+          "type": "string",
+          "format": "binary"
+        }
+      }
+    },
+    "CommonItem": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "example" : {
+        "_id": "<item_id>",
+        "name": "<some value>"
+      }
+    }
+  }
+}

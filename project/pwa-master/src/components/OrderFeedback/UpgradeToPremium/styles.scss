@@ -1,0 +1,111 @@
+@import "../../../scss/common.styles.scss";
+
+.upgradeToPremiumContainer {
+  @extend .componentContainer;
+  background-color: $main-1;
+  margin: 39px 22px 18px 22px;
+  box-shadow: #00000029 0px 1px 6px;
+
+  .upgradeToPremiumHeader {
+    font-size: $font-size-normal;
+    letter-spacing: 1.4px;
+    font-weight: 700;
+    line-height: 22px;
+    color: $main-3;
+    padding: 20px 20px;
+    .premiumHeader {
+      color: $color-2;
+    }
+  }
+  .subscriptionContainer {
+    background-color: $main-2;
+    padding: 20px 20px;
+    border-bottom: 2px solid $main-7;
+    .insiderContainer {
+      display: flex;
+      flex-direction: row;
+      width: inherit;
+      justify-content: space-between;
+      .insiderText {
+        font-size: $font-size-medium;
+        color: $color-2;
+        font-weight: 700;
+        letter-spacing: 1.6px;
+      }
+      .silverIcon {
+        height: 40px;
+        width: 40px;
+      }
+    }
+  }
+  .priceContainer {
+    color: $main-1;
+    font-weight: 300;
+    display: flex;
+    flex-direction: row;
+    .currency {
+      font-size: $font-size-xl + 1;
+      letter-spacing: 2.1px;
+      display: flex;
+      align-items: center;
+    }
+    .proAmount {
+      font-size: 41px;
+      line-height: 50px;
+      display: flex;
+      align-items: flex-start;
+    }
+    .perYear {
+      font-size: $font-size-xl;
+      line-height: 20px;
+      display: flex;
+      align-items: center;
+      margin-left: 8px;
+    }
+  }
+  .subscriptionText {
+    background-color: $main-2;
+    padding: 20px 20px;
+    font-size: $font-size-small;
+    font-weight: 300;
+    color: $main-1;
+  }
+  .proDescriptionContainer {
+    background-color: $main-1;
+    padding: 20px 20px;
+    border-bottom: 1px solid $main-5;
+    .description {
+      font-size: $font-size-small;
+      color: $main-2;
+    }
+    .boldDescription {
+      @extend .description;
+      font-weight: 700;
+    }
+  }
+  .addPremiumContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 36px 24px;
+    .checkBoxStyle {
+      height: 20px;
+      width: 20px;
+    }
+    .addSubscriptionText {
+        margin-left: 10px;
+        font-size: $font-size-small - 1;
+        color: $main-9;
+        font-weight: 700;
+    }
+  }
+}
+
+.premiumAccessContainer {
+  @extend .upgradeToPremiumContainer;
+  .description {
+    margin: 0;
+    padding: 0 20px;
+    font-size: $font-size-small;
+    color: $main-2;
+  }
+}

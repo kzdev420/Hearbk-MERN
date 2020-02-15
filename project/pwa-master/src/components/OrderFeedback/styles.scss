@@ -1,0 +1,71 @@
+@import "../../scss/common.styles.scss";
+
+.orderFeedbackContainer {
+    @extend .componentContainer;
+    background-color: $main-5;
+    width: 100%;
+  .orderFeedbackHeader {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: "center";
+    justify-content: space-between;
+    padding: 40px 17px 0px 17px;
+    .silverLogo {
+        position: absolute;
+        right: 17px;
+        top: 30px;
+        height: 40px;
+        width: 40px;
+    }
+  }
+  .orderFeedbackHeaderText {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0 33%;
+      text-align: center;
+      width: 33%;
+      font-size: $font-size-l;
+  }
+  .hitCampaignContainer {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 33px;
+      .hitCampaignHeader {
+          font-size: $font-size-normal;
+          line-height: 22px;
+          letter-spacing: 1.4px;
+          font-weight: 700;
+          color: $main-3;
+      }
+      .hitCampaignDescription {
+          > p {
+              font-size: $font-size-normal;
+              font-weight: 300;
+              line-height: 18px;
+              text-align: center;
+              color: $main-2;
+          }
+      }
+  }
+  .addAnotherTrack {
+      display: flex;
+      justify-content: center;
+      color: $main-2;
+      font-size: $font-size-small - 1;
+      letter-spacing: 1.1px;
+      font-weight: 700;
+      cursor: pointer;
+  }
+  .orderButtonWrapper {
+    margin: 25px 20px 100px 20px;
+    display: flex;
+    justify-content: center;
+    .launchButton {
+        width: 100%;
+    }
+  }
+}

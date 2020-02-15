@@ -1,0 +1,10 @@
+@import "../../scss/variables.scss";
+
+.authTabsContainer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0px 20px 5px 20px;
+    height: 150px;
+    background: url('../../assets/img/headingBG.png');
+}

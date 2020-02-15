@@ -1,0 +1,110 @@
+@import "../../../scss/common.styles.scss";
+
+.formContainer {
+    .genderBoxRow {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 16px;
+        margin-top: 17px;
+        margin-bottom: 22px;
+        .genderBoxButtonWrapper {
+            .genderBoxSelectors {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 90px;
+                height: 40px;
+                font-size: $font-size-small;
+                color: $main-2;
+                border: 2pt solid $main-7;
+            }
+            .genderBoxSelectors:hover {
+                cursor: pointer;
+            }
+            .selected {
+                color: $main-1;
+                background: $main-2;
+                border-color: $main-2;
+            }
+        }
+    }
+    .addCircleIconContainer {
+        position: relative;
+        .addCircleIcon {
+            position: absolute;
+            height: 24px;
+            width: 24px;
+            right: 0;
+            bottom: -38px;
+        }
+    }
+    .addGenresList {
+        position: absolute;
+        padding: 0 5px;
+        right: 0;
+        bottom: -20px;
+        width: 50%;
+        height: 300px;
+        color: $main-1;
+        font-size: $font-size-small;
+        background: $main-9;
+        list-style: none;
+        overflow-y: scroll;
+        z-index: 1000;
+        .addGenresLis {
+            padding: 10px;
+            color: $main-1;
+        }
+        .addGenresLis:hover {
+            cursor: pointer;
+        }
+    }
+    #genres {
+        margin-bottom: 0;
+        padding-bottom: 8px;
+        border-bottom: none;
+    }
+    .selectedGenresContainer {
+        display: flex;
+        flex-flow: row wrap;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        line-height: initial;
+        .addGenresSelectedLis {
+            height: 23px;
+            margin: 3px;
+            padding: 0 10px;
+            font-size: 9px;
+            color: $main-1;
+            background: $color-4;
+            border: 1pt solid $color-4;
+            border-radius: 30px;
+        }
+    }
+    .addTagsList {
+        @extend .addGenresList;
+        .addTagsLis {
+            @extend .addGenresLis;
+        }
+        .addTagsLis:hover {
+            cursor: pointer;
+        }
+    }
+    #tags {
+        @extend #genres;
+    }
+    .selectedTagsContainer {
+        @extend .selectedGenresContainer;
+        .addTagsSelectedLis {
+            @extend .addGenresSelectedLis;
+        }
+    }
+
+    button {
+        padding: 0;
+        background: transparent;
+        border: none;
+        outline: none;
+    }
+}

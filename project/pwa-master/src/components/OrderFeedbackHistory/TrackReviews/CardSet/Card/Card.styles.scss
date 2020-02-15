@@ -1,0 +1,107 @@
+@import "../../../../../scss/common.styles.scss";
+
+.bigWrapper {
+    position: relative;
+    .ratingIconWrapper {
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 43px;
+        margin-top: 18px;
+        margin-left: 10px;
+        background: $color-2;
+        color: $main-1;
+        font-size: $font-size-medium;
+        font-weight: bold;
+        box-shadow: 0 3px 6px #00000029;
+    }
+    .ratingIconWrapper.greenWrapper {
+        background: $color-6;
+    }
+    .reviewSubContainers {
+        margin: 10px 22px;
+        background: $main-1;
+        box-shadow: 0 1pt 6pt #00000029;
+        text-align: left;
+        .subContainerHeader {
+            display: flex;
+            position: relative;
+            align-items: center;
+            height: 76px;
+            color: $main-3;
+            * {
+                pointer-events: none;
+            }
+            .expandIcon {
+                position: absolute;
+                right: 22px;
+                color: $color-6;
+            }
+            .trackIcon {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                right: 44px;
+                margin-top: 2px;
+            }
+            .reviewHeaderContainer {
+                margin-left: 60px;
+                .trackTitle {
+                    color: $main-9;
+                    font-size: $font-size-normal;
+                    font-weight: 700;
+                }
+                .trackDescription {
+                    margin-top: 2px;
+                    color: $color-2;
+                    font-size: $font-size-small;
+                }
+                .trackDate {
+                    @extend .trackDescription;
+                    margin-top: 8px;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+        .subContainerHeader:hover {
+            cursor: pointer;
+        }
+        .subContainerBody {
+            padding: 20px;
+            border-top: 1px solid $color-7;
+            .commentsLabel {
+                color: $main-2;
+                font-size: $font-size-xs + 1;
+                letter-spacing: 1.1px;
+                opacity: .4;
+            }
+            .commentsContainer {
+                margin-top: 20px;
+                color: $main-2;
+                font-size: $font-size-normal;
+                line-height: 1.3;
+            }
+        }
+        .subContainerFooter {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 76px;
+            color: $color-2;
+            font-size: $font-size-small;
+            border-top: 1px solid $color-7;
+            .reviewerProfilePic {
+                width: 30px;
+                height: 30px;
+                margin: 0 10px 0 12px;
+                border: 3px solid $color-7;
+                border-radius: 50%;
+            }
+            .reviewerTag {
+                color: $main-9;
+            }
+        }
+    }
+}

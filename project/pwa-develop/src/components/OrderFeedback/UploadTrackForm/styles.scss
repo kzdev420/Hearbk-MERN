@@ -1,0 +1,161 @@
+@import "../../../scss/common.styles.scss";
+
+.uploadTrackFormContainer {
+  @extend .componentContainer;
+  background-color: $main-1;
+  margin: 10px 22px 18px 22px;
+  box-shadow: #00000029 0px 1px 6px;
+  padding: 20px 20px;;
+  .uploadTrackHeaderContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: inherit;
+    .uploadTrackHeaderText {
+      font-size: $font-size-normal;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+    }
+    .uploadTrackNumber {
+      border: 1px solid $color-5;
+      border-radius: 30px;
+      font-size: $font-size-xs;
+      padding: 6px 22px;
+      color: $main-2;
+      letter-spacing: .45px;
+    }
+  }
+  .trackInputContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    .titleLabel {
+      font-size: $font-size-small - 1;
+      letter-spacing: 1.1px;
+      font-weight: 500;
+      color: $main-2;
+      opacity: .4;
+    }
+    .titleInput {
+      border: none;
+      border-bottom: 1px solid rgba(106, 120, 138, .2);
+      padding-bottom: 16px;
+      margin-top: 17px;
+      margin-bottom: 22px;
+      opacity: .3;
+    }
+  }
+  .orText {
+    display: flex;
+    justify-content: center;
+    padding: 0 33%;
+    color: $main-2;
+    font-size: $font-size-small;
+    font-weight: bold;
+    opacity: .4;
+  }
+  .buttonWrapper {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 16px;
+    box-shadow: #00000029 0px 3px 6px;
+    .uploadButton {
+      border: 1px $main-2 solid;
+      background-color: $main-1;
+      color: $main-2;
+      font-size: $font-size-small;
+      width: 100%;
+      letter-spacing: 1.2px;
+      height: 50px;
+    }
+  }
+  .metaInputContainer {
+    @extend .trackInputContainer;
+    position: relative;
+    #trackGenre {
+      margin-bottom: 0;
+      padding-bottom: 8px;
+      border-bottom: none;
+    }
+    .addGenreIcon {
+      position: absolute;
+      height: 24px;
+      width: 24px;
+      right: 0;
+      top: 50%;
+    }
+    .addGenresList {
+      position: absolute;
+      padding: 0;
+      right: 0;
+      bottom: 25px;
+      width: 50%;
+      height: 300px;
+      color: $main-1;
+      font-size: $font-size-small;
+      background: $main-9;
+      list-style: none;
+      overflow-y: scroll;
+      z-index: 1000;
+      .addGenresLis {
+          padding: 10px;
+          background: transparent;
+          color: $main-1;
+          border: none;
+      }
+      .addGenresLis:hover {
+          cursor: pointer;
+      }
+    }
+  }
+  .selectedGenresContainer {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: initial;
+    .addGenresSelectedLis {
+        height: 23px;
+        margin: 3px;
+        padding: 0 10px;
+        font-size: 9px;
+        color: $main-1;
+        background: $color-4;
+        border: 1pt solid $color-4;
+        border-radius: 30px;
+    }
+  }
+  .ratingsContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5.5px;
+    .ratingsText {
+      font-size: $font-size-small;
+      color: $main-2;
+    }
+    .ratingsButtonWrapper {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .ratingsButton {
+            width: 140px;
+            height: 40px;
+            color: $main-2;
+            background-color: $main-1;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            border: 2px solid $color-4;
+        }
+        .isSelected {
+          color: $main-1;
+          background-color: $color-5;
+          border: none;
+      }
+    }
+  }
+}

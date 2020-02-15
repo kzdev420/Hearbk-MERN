@@ -1,0 +1,6 @@
+export default {
+    TITLE_1: `ORDER`,
+    TITLE_2: `HISTORY`,
+    STATS_BUTTON_1: `HIT STATS`,
+    STATS_BUTTON_2: `TRACK REVIEWS`
+};

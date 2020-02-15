@@ -1,0 +1,45 @@
+@import "../../../scss/common.styles.scss";
+
+.trackReviewsComponentContainer {
+    margin: 25px 0;
+    .trackReviewsTitle {
+        color: $main-9;
+        font-size: $font-size-normal;
+        font-weight: 700;
+        letter-spacing: 1.4px;
+        text-align: center;
+    }
+    .mainHitStatsRow {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: calc(100% - 44px);
+        margin: 20px 22px;
+        border-bottom: 2px solid rgba(157, 175, 199, .4);
+        .mainHitStatsCols {
+            margin-top: 10px;
+            font-size: $font-size-xxl + 6;
+            font-weight: 700;
+            text-align: center;
+            .ratingRow {
+                display: flex;
+                position: relative;
+                justify-content: center;
+                align-items: flex-start;
+                .dividendFont {
+                    position: absolute;
+                    right: 0;
+                    top: 6px;
+                    font-size: $font-size-xs;
+                    letter-spacing: 1.2px;
+                }
+            }
+        }
+        .colTitles {
+            margin: 10px 0;
+            color: $color-2;
+            font-size: $font-size-xs;
+            font-weight: 500;
+        }
+    }
+}

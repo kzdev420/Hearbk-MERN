@@ -1,0 +1,1 @@
+export const validateSchema = (doc, schema) => schema.isValidSync(doc);

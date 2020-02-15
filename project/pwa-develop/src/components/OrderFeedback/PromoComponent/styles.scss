@@ -1,0 +1,24 @@
+@import "../../../scss/common.styles.scss";
+
+.promoContainer {
+  @extend .componentContainer;
+  background-color: $main-1;
+  margin: 20px 22px 18px 22px;
+  box-shadow: #00000029 0px 1px 6px;
+  padding: 20px;
+  .promoLabel {
+    font-size: $font-size-normal;
+    letter-spacing: 1.4px;
+    font-weight: 700;
+    line-height: 22px;
+    color: $main-3;
+  }
+  .titleInput {
+    border: none;
+    border-bottom: 1px solid $main-2;
+    padding-bottom: 16px;
+    margin-top: 17px;
+    margin-bottom: 22px;
+    opacity: .3;
+  }
+}

@@ -1,0 +1,16 @@
+export default {
+  UPLOAD_TRACK_HEADER: "UPLOAD YOUR TRACK",
+  TITLE_LABEL: "TRACK TITLE",
+  TITLE_INPUT_PLACEHOLDER: "Type the title for your track",
+  TRACK_GENRE_LABEL: "SELECT ONE GENRE",
+  TRACK_GENRE_PLACEHOLDER: "Search for genres",
+  YOU_TUBE_LABEL: "PASTE YOUR YOUTUBE LINK",
+  YOU_TUBE_LINK_PLACEHOLDER: "https://",
+  FILE_TO_UPLOAD_LABEL: "Choose the file to upload",
+  OR: "-- OR --",
+  UPLOAD_YOUR_TRACK: "UPLOAD FROM DEVICE",
+  ADD_YOUTUBE_URL: "UPLOAD FROM YOUTUBE",
+  RATINGS_TEXT: "How many ratings would you like to receive?",
+  RATINGS_TIER_10: "10 FOR $1",
+  RATINGS_TIER_100: "100 FOR $5"
+};

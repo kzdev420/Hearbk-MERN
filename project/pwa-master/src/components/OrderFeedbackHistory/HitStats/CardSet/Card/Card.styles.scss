@@ -1,0 +1,127 @@
+@import "../../../../../scss/common.styles.scss";
+
+.hitStatsSubContainers {
+    margin: 10px 22px;
+    background: $main-1;
+    box-shadow: 0 1pt 6pt #00000029;
+    text-align: left;
+    .subContainerHeader {
+        display: flex;
+        position: relative;
+        align-items: center;
+        height: 56px;
+        padding: 0 20px;
+        color: $main-3;
+        * {
+            pointer-events: none;
+        }
+        .expandIcon {
+            position: absolute;
+            right: 22px;
+            color: $color-5;
+        }
+        .headerIcon {
+            width: 24px;
+            height: 24px;
+        }
+        .headerPercentageLabel {
+            margin-left: 10px;
+            font-size: $font-size-xxl;
+            font-weight: 700;
+            letter-spacing: 1.6px;
+        }
+        .headerPercentSignLabel {
+            margin-top: -5px;
+            font-size: $font-size-medium;
+        }
+        .descriptionContainer {
+            margin: 0 20px 0 auto;
+            text-align: right;
+            .descriptionDateRange {
+                margin-bottom: 3px;
+                color: $color-2;
+                font-size: $font-size-xs;
+                letter-spacing: 1px;
+            }
+            .descriptionPercentage {
+                color: $main-9;
+                font-size: $font-size-small;
+            }
+            .descriptionType {
+                @extend .descriptionPercentage;
+                font-weight: 700;
+            }
+        }
+    }
+    .subContainerHeader:hover {
+        cursor: pointer;
+    }
+    .trackDescription {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 30px;
+        padding: 0 22px;
+        background: $color-5;
+        color: $main-1;
+        font-size: $font-size-xs;
+    }
+    .expandedBoxHeader {
+        margin-top: 15px;
+        color: $main-2;
+        font-size: $font-size-normal;
+        font-weight: 500;
+        text-align: center;
+    }
+    .statsContainerRow {
+        display: flex;
+        padding: 15px 38px 20px 38px;
+        .statsContainerCols {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            width: 25%;
+            .colIcons {
+                width: 24px;
+                height: 24px;
+            }
+            .iconOpacityControl {
+                opacity: .6;
+            }
+            .listenerNumberLabel {
+                margin-top: 11px;
+                color: $color-2;
+                font-size: $font-size-l;
+                font-weight: 700;
+            }
+            .listenerTypeLabel {
+                margin-top: 5px;
+                color: $color-2;
+                font-size: $font-size-xs - 1;
+                font-weight: 500;
+            }
+            .hitsNumberLabel {
+                @extend .listenerNumberLabel;
+                color: $color-5;
+            }
+            .hitsTypeLabel {
+                @extend .listenerTypeLabel;
+                color: $color-5;
+            }
+            .missesNumberLabel {
+                @extend .listenerNumberLabel;
+            }
+            .missesTypeLabel {
+                @extend .listenerTypeLabel;
+            }
+            .potentialNumberLabel {
+                @extend .listenerNumberLabel;
+                color: $main-3;
+            }
+            .potentialTypeLabel {
+                @extend .listenerTypeLabel;
+                color: $main-3;
+            }
+        }
+    }
+}

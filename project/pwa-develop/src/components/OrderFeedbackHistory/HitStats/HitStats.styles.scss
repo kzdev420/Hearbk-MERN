@@ -1,0 +1,39 @@
+@import "../../../scss/common.styles.scss";
+
+.hitStatsComponentContainer {
+    margin: 25px 0 100px 0;
+    .hitStatsTitle {
+        color: $main-9;
+        font-size: $font-size-normal;
+        font-weight: 700;
+        letter-spacing: 1.4px;
+        text-align: center;
+    }
+    .mainHitStatsRow {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 20px 22px;
+        border-bottom: 2px solid rgba(157, 175, 199, .4);
+        .mainHitStatsCols {
+            position: relative;
+            width: 63px;
+            margin-top: 10px;
+            font-size: $font-size-xxl + 6;
+            font-weight: 700;
+            text-align: center;
+            .colPercentSign {
+                position: absolute;
+                font-size: $font-size-normal + 1;
+                margin-left: 2px;
+                top: 3px;
+            }
+        }
+        .colTitles {
+            margin: 10px 0;
+            color: $color-2;
+            font-size: $font-size-xs;
+            font-weight: 500;
+        }
+    }
+}

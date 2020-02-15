@@ -1,0 +1,36 @@
+@import "../../../scss/common.styles.scss";
+
+.formContainer {
+    .subscriptionRenewBox {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        margin-top: 20px;
+        padding: 20px 0 10px 0;
+        border: 2pt solid $main-7;
+        line-height: 1.5;
+        .subscriptionRenewBoxLabel {
+            color: $main-2;
+            font-size: $font-size-small;
+            font-weight: 500;
+            line-height: 2;
+        }
+        .subscriptionRenewBoxDate {
+            color: $main-3;
+            font-size: $font-size-normal;
+            font-weight: 700;
+        }
+        .subscriptionRenewBoxAmount {
+            color: #9CAEC7;
+            font-size: 21px;
+            font-weight: 200;
+        }
+    }
+    .subscriptionDescription {
+        width: 244px;
+        color: $main-2;
+        font-size: $font-size-small;
+        text-align: center;
+        margin: 40px auto;
+    }
+}

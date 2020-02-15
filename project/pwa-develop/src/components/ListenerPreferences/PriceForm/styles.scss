@@ -1,0 +1,57 @@
+@import "../../../scss/common.styles.scss";
+
+.formContainer{
+    .formHeaderContainer {
+        display: initial !important;
+        .formHeaderDescription {
+            margin-top: 20px;
+            font-size: $font-size-small;
+        }
+    }
+    #priceLabel {
+        position: relative;
+        .priceSign {
+            position: absolute;
+            bottom: -35px;
+            color: $main-3;
+            font-size: $font-size-normal;
+            opacity: .3;
+        }
+    }
+    .sendMeDescriptionA {
+        font-size: $font-size-small;
+        margin-bottom: 0;
+        margin: 10px 0;
+    }
+    .sendMeDescriptionBContainer {
+        line-height: 1;
+        .sendMeDescriptionBIntro {
+            @extend .sendMeDescriptionA;
+            margin-bottom: 0;
+        }
+        .sendMeDescriptionBMain {
+            color: $main-2;
+            font-size: $font-size-small;
+            font-style: italic;
+        }
+    }
+    .sendMeTitleContainer {
+        margin-top: 20px;
+        .sendMeTitleA {
+            color: $main-3;
+            font-weight: 700;
+            font-size: $font-size-normal;
+        }
+        .sendMeTitleB {
+            color: $main-3;
+            font-size: $font-size-normal;
+            opacity: .3;
+        }
+    }
+    .describeYourselfTitle {
+        margin: 10px 0;
+        color: $main-3;
+        font-size: $font-size-normal;
+        opacity: .3;
+    }
+}

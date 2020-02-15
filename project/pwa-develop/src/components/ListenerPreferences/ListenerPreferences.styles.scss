@@ -1,0 +1,123 @@
+@import "../../scss/common.styles.scss";
+
+.listenerPreferencesContainer {
+    @extend .componentContainer;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: $main-5;
+    text-align: center;
+    .menuIcon {
+        position: absolute;
+        height: $font-size-xxl;
+        width: $font-size-xxl;
+        left: 17px;
+        top: 30px;
+    }
+    .listenerPreferencesHeaderText {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 40px;
+        font-size: $font-size-l;
+        text-align: center;
+    }
+    .listenerPreferencesDescription {
+        padding: 25px 0;
+        font-size: $font-size-small;
+        color: $main-2;
+    }
+    .requestBoxesContainer {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 22px 10px 22px;
+        .requestBox {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            width: 48%;
+            color: $main-2;
+            border: 2pt solid $color-4;
+            text-align: left;
+            box-sizing: border-box;
+            * {
+                pointer-events: none;
+            }
+            .requestBoxContents {
+                margin: 35px 0 50px 0;
+                text-align: center;
+                label, ul {
+                    font-size: $font-size-small;
+                    font-weight: 700;
+                }
+                label {
+                    text-align: center;
+                    letter-spacing: 1.2px;
+                }
+                ul {
+                    margin: 11px 0 0 0;
+                    padding: 0;
+                    font-weight: 300;
+                    list-style: none;
+                }
+                ul > li {
+                    display: flex;
+                    margin-top: 15px;
+                    font-weight: 300;
+                }
+                .checkIconContainer {
+                    margin: 0 5px 0 0;
+                    .checkIcon {
+                        width: 15px;
+                        height: 15px;
+                        background-size: contain !important;
+                    }
+                }
+            }
+        }
+        .requestBox:hover {
+            cursor: pointer;
+        }
+        .selected {
+            color: $main-1;
+            background: $main-9;
+            border-color: $main-9;
+        }
+    }
+
+    .buttonWrapper {
+        margin: 3px 0 100px 0;
+        padding: 0 20px;
+        .launchButton {
+            width: 100%;
+            margin: 5px 0;
+            box-shadow: 0pt 3pt 6pt #00000029;
+        }
+        .launchButton.saveButton {
+            background: $main-7;
+            color: $main-9;
+            font-size: $font-size-normal;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: none;
+        }
+        .buttonLabel {
+            @extend .listenerPreferencesDescription;
+            padding: 0 0 13px 0;
+        }
+        .launchButton.moreEditsButton {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            width: 100%;
+            background: $main-7;
+            color: $main-9;
+            font-size: $font-size-normal;
+            font-weight: 600;
+            box-shadow: none;
+        }
+    }
+}
+.heightAuto {
+    height: auto;
+}

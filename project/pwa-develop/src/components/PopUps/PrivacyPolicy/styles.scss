@@ -1,0 +1,15 @@
+@import "../../../scss/common.styles.scss";
+
+.privacyContainer {
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    overflow-y: scroll;
+}
+
+.radioWrapper {
+    display: flex;
+    flex-direction: row;
+}

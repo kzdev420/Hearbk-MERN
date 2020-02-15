@@ -1,0 +1,6 @@
+export default {
+    TITLE: `HIT CAMPAIGN RESULTS`,
+    COL_TITLE_1: `CAMPAIGNS`,
+    COL_TITLE_2: `LISTENERS`,
+    COL_TITLE_3: `HIT RATE`,
+};

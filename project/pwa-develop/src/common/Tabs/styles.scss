@@ -1,0 +1,18 @@
+@import "../../scss/variables.scss";
+
+.tabsContainer {
+    display: flex;
+    flex-direction: row;
+    .tabItem {
+        flex-grow: 1;
+        border-bottom: 3px solid $main-2;
+        font-size: $font-size-xl;
+        font-weight: 300;
+        padding: 2px 25px;
+        color: $main-2;
+    }
+    .isSelected {
+        border-bottom-color: $main-1;
+        color: $main-1;
+    }
+}

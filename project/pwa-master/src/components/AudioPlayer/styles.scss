@@ -1,0 +1,15 @@
+@import "../../scss/variables.scss";
+
+//override 
+
+.rhap_main-controls-button {
+    color: $main-1
+}
+
+.rhap_progress-bar {
+    background-color: $color-3;
+}
+
+.rhap_time {
+    color: $main-1 !important;
+}

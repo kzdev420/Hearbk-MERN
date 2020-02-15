@@ -1,0 +1,36 @@
+@import "../../../scss/variables.scss";
+
+.landingPageFooterContainer {
+    background-color: #46515F;
+    padding: 40px 37.5px 25px 37.5px;
+    height: max-content;
+    .socialMediaActionContainer {
+        display: flex;
+        flex-direction: row;
+        padding-left: 45px;
+        padding-right: 45px;
+        padding-bottom: 36px;
+        justify-content: space-between;
+        border-bottom: 1px rgba(107, 121, 140, 0.30) solid;
+        .socialMediaIcon {
+            height: 39px;
+            width: 39px;
+        }
+    }
+    .footerMenuContainer {
+        margin-top: 35px;
+        display: flex;
+        padding: 0px 1em;
+        flex-direction: row;
+        justify-content: space-between;
+        .footerMenuColumn {
+            display: flex;
+            flex-direction: column;
+            a {
+                font-size: $font-size-small;
+                color: $main-1;
+                text-decoration: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,160 @@
+@import "../../scss/common.styles.scss";
+
+.settingsContainer {
+    width: 100%;
+    height: 812px;
+    background: $main-5;
+    overflow-y: scroll;
+    border: 1px solid black;
+    .largeBannerHeaderContainer {
+        .exitIcon {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: 21px;
+            top: 34px;
+        }
+        .exitIcon:hover {
+            cursor: pointer;
+        }
+        .profilePicIconContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 95px;
+            height: 95px;
+            margin-top: 37px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, $main-7, #363D46);
+            .profilePicIcon {
+                width: 90px;
+                height: 90px;
+            }
+        }
+    }
+    .settingsStatusContainer {
+        display: flex;
+        justify-content: space-between;
+        margin: 196px 26.5px 10px 26.5px;
+        .subHeaderLabel {
+            color: #9CAEC7;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0;
+        }
+        .subHeaderAmount {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-bottom: 2px;
+            font-size: $font-size-xxl;
+            font-weight: 700;
+            border-bottom: 1pt solid rgba(107, 121, 140, .1);
+            letter-spacing: 1.2pt;
+            .subHeaderAmountFontAdjust {
+                margin: 3px 2px;
+                font-size: $font-size-small;
+                font-weight: 300;
+                letter-spacing: .6pt;
+            }
+        }
+        .points {
+            display: none;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            width: 105px;
+            height: 55.5px;
+        }
+        .status {
+            display: flex;
+            flex-flow: column nowrap;
+            margin: 10px auto 0 auto;
+            line-height: 3;
+            .statusBox {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 99px;
+                height: 23px;
+                color: $main-2;
+                border: 1pt solid $main-2;
+                border-radius: 30px;
+                font-size: 9px;
+                font-weight: 500;
+                letter-spacing: .45pt;
+            }
+            .insiderBox {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $main-3;
+                font-size: $font-size-small;
+                font-weight: 600;
+                letter-spacing: 0;
+                .checkIcon {
+                    width: 10.66px;
+                    height: 7.67px;
+                    margin: 0 3px 0 0;
+                }
+            }
+        }
+        .balance {
+            @extend .points;
+        }
+    }
+    .formContainer {
+        .formHeaderContainer {
+            position: relative;
+            .expandIcon {
+                position: absolute;
+                right: 0;
+                pointer-events: none;
+            }
+            .formHeaderText {
+                pointer-events: none;
+            }
+        }
+        .buttonWrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-self: center;
+            width: 100%;
+            height: 50px;
+            background: linear-gradient(74deg, $main-3, #B4C4D9);
+            box-shadow: 0 3px 6px #00000029;
+            .launchButton {
+                width: 98%;
+                height: 46px;
+                font-size: $font-size-small;
+                color: $main-2;
+                background: $main-1;
+            }
+            .launchButton:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .launchButton.logoutButton {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        width: 90%;
+        height: 56px;
+        margin: 10px auto;
+        background: $main-7;
+        color: $main-9;
+        font-size: $font-size-normal;
+        font-weight: 600;
+        .exitToAppIcon {
+            width: 17px;
+            height: 17px;
+            margin-left: 5px;
+        }
+    }
+
+    .expand {
+        height: initial;
+    }
+}

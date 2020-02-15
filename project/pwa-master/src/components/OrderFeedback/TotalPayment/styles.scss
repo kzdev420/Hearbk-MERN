@@ -1,0 +1,78 @@
+@import "../../../scss/common.styles.scss";
+
+.totalPaymentContainer {
+  @extend .componentContainer;
+  background-color: $main-9;
+  margin: 20px 22px 18px 22px;
+  box-shadow: #00000029 0px 1px 6px;
+  .totalPaymentHeader {
+    padding: 24px 0px 21px 24px;
+    font-size: $font-size-normal;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    color: $main-1;
+    border-bottom: 1px $color-2 solid;
+  }
+  .trackPaymentContainer {
+    padding-bottom: 26px;
+    .trackPaymentComponent {
+      padding: 15px 15px 15px 24px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      border-bottom: 1px solid $color-2;
+      .trackDetails {
+        .trackTitle {
+          font-weight: 300;
+          font-size: $font-size-small;
+          color: $main-1;
+        }
+        .trackGenre {
+          @extend .trackTitle;
+          font-size: $font-size-xs;
+          font-style: italic;
+        }
+      }
+      .amountContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .amount {
+          font-weight: 300;
+          font-size: $font-size-small;
+          color: $main-1;
+        }
+        .cancelIcon {
+          height: 14.75px;
+          width: 14.75px;
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+  .totalAmountContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+    .currency {
+      font-size: $font-size-xxl;
+      color: $color-5;
+    }
+    .amountContainer {
+      position: relative;
+      margin-right: 50px;
+      .amount {
+        font-size: 47px;
+        color: $color-5;
+      }
+      .decimalPart {
+        position: absolute;
+        font-size: $font-size-xxl;
+        color: $color-5;
+        top: 5%;
+      }
+    }
+  }
+}

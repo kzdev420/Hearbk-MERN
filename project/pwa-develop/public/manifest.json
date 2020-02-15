@@ -1,0 +1,45 @@
+{
+  "short_name": "HEARBK",
+  "name": "HEARBK - We are the Influencers",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "icon_57.png",
+      "type": "image/png",
+      "sizes": "57x57"
+    },
+    {
+      "src": "icon_50.png",
+      "type": "image/png",
+      "sizes": "50"
+    },
+    {
+      "src": "icon_114.png",
+      "type": "image/png",
+      "sizes": "114x114"
+    },
+    {
+      "src": "icon_120.png",
+      "type": "image/png",
+      "sizes": "120x120"
+    },
+    {
+      "src": "icon_167.png",
+      "type": "image/png",
+      "sizes": "167x167"
+    },
+    {
+      "src": "icon_180.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,16 @@
+@import "../../../scss/common.styles.scss";
+
+.formContainer {
+    .containerLabel {
+        margin-top: 20px;
+        line-height: initial;
+    }
+    .inputFieldContainer {
+        margin-bottom: 0;
+    }
+    .priceContainer {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+}

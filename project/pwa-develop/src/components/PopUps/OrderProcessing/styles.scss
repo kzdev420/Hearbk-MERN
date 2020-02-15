@@ -1,0 +1,29 @@
+@import "../../../scss/common.styles.scss";
+
+.popUpSmallContainer {
+  .orderProcessingContainer {
+    padding: 200px 0 170px 0;    
+    .refreshIcon {
+      width: 57px;
+      height: 64px;
+      margin: auto;
+      animation: rotation 3s infinite linear;
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
+    }
+    .processingLabel {
+      margin-top: 96px;
+      color: $main-3;
+      font-size: $font-size-normal;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-align: center;
+    }
+    }
+}

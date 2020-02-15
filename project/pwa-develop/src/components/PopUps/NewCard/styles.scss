@@ -1,0 +1,46 @@
+@import "../../../scss/common.styles.scss";
+
+.newCardContainer {
+    
+    .newCardHeaderContainer {
+        margin: 60px 0 30px 0;
+        color: $main-3;
+        font-size: $font-size-normal;
+        font-weight: 700;
+        text-align: center;
+        letter-spacing: 1.4px;
+    }
+    
+    .inputFieldContainer {
+        padding: 0 39px;
+        .inputFieldHeader {
+            margin-top: 20px;
+            color: $main-2;
+            font-size: 11px;
+            opacity: .4;
+            letter-spacing: 1.1px;
+        }
+        input {
+            border: none;
+            border-radius: 0;
+            background-color: transparent;
+            resize: none;
+            outline: none;
+        }
+        .inputField {
+            width: 100%;
+            padding: 20px 0;
+            color: $main-3;
+            font-size: $font-size-normal;
+            box-shadow: 0px 1px #00000029;
+            opacity: .3;
+        }
+        .inputFieldRow {
+            display: flex;
+            .inputFieldCols.colLeft {
+                margin-right: 10px;
+            }
+        }
+    }
+    
+}
