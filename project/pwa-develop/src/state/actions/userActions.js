@@ -62,7 +62,7 @@ export const registerUserAction = (requestData, file) => (dispatch) =>
       }
     });
 
-export const SendResetPasswordLink = (requestData) =>
+export const SendResetPasswordLink = (requestData) => (dispatch) =>
   fetch(`${api}${postSendResetPasswordLink}`, {
     method: "POST",
     headers: genericHeaders(),
@@ -76,6 +76,36 @@ export const SendResetPasswordLink = (requestData) =>
         toast.error("Failed, Invalid EmailAddress");
       }
     })
+    .then((data) => {
+      if (data) {
+        const {
+          token,
+          expireTime = 3600000,
+        } = data;
+        localStorage.setItem("x-access-token", token);
+        setTimeout(() => {
+          localStorage.removeItem("x-access-token");
+        }, expireTime);
+      }
+    });
+
+export const ResetPasswordAction = (requestData, userid) => (dispatch) => {
+  fetch(`${api}${postRegisterUserURI}`, {
+    method: "POST",
+    headers: genericHeaders(),
+    body: JSON.stringify({
+      id: userid,
+      password: requestData.password,
+    }),
+  })
+  .then(response => {
+      if (response.ok) {
+        toast.success("Password reseted sucessfully. Please login");
+      } else {
+        toast.error("Failed, Please try again");
+      }
+  });
+}
 
 export const authenticateUser = (requestData) => (dispatch) =>
   fetch(`${api}${postAuthenticateUserURI}`, {

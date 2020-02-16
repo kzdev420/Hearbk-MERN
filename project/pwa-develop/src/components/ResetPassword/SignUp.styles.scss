@@ -1,0 +1,49 @@
+@import "../../scss/variables.scss";
+@import "../../scss/common.styles.scss";
+
+.signUpContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 60px 30px 0em 30px;
+  height: auto;
+
+  .signUpLabel {
+    font-size: $font-size-xxl;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .signUpText {
+    color: $main-2;
+    font-size: 18px;
+    font-weight: 300;
+  }
+  
+  .addPhotoContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    .addPhotoButton {
+      border: none;
+      height: 120px;
+      width: 120px;
+      .addPhotoIcon {
+          height: 120px;
+          width: 120px;
+      }
+    }
+  }
+  .buttonWrapper {
+    margin-top: 30px;
+  }
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.fileInputClass {
+  width: 0;
+  position: absolute;
+  z-index: -99;
+}
