@@ -13,10 +13,11 @@ const ResetpasswordContainer = ({ ResetPassword, handleSuccess }) => {
 
   const {userid, token} = useParams()
   const Savedtoken = localStorage.getItem("x-access-token");
-  // if(Savedtoken != token){
-  //   toast.error("Session Expired, Please try send ResetPassword Link");
-  //   history.push("/forgotpassword");
-  // }
+  if(Savedtoken != token){
+    toast.error("Session Expired, Please try send ResetPassword Link");
+    history.push("/forgotpassword");
+  }
+  
   const [userData, setUserData] = useState({});
 
   const handleResetPassword = useCallback(() => {

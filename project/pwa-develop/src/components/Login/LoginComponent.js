@@ -40,6 +40,11 @@ const LoginComponent = ({ email, password, onInputChange, loginUser }) => {
           name="rememberUser"
         />
         <div className="rememberMeText">{content.REMEMBER}</div>
+        <div className="rememberMeText">
+          <Link to="/forgotpassword">
+            FORGOT PASSWORD
+          </Link>
+        </div>
       </div>
       <div className="buttonWrapper">
         <Button
@@ -47,11 +52,6 @@ const LoginComponent = ({ email, password, onInputChange, loginUser }) => {
           buttonText={content.LOGIN_LABEL}
           onClick={loginUser}
         ></Button>
-      </div>
-      <div className="forgotPassword">
-        <Link to="/forgotpassword">
-          FORGOT PASSWORD
-        </Link>
       </div>
     </div>
   );

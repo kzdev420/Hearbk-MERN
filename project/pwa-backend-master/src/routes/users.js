@@ -7,6 +7,8 @@ import {
   getUserPaymentMethodsService,
   getUserDetailsService,
   validateUserTokenService,
+  sendresetpasswordlinkservice,
+  resetpasswordservice,
 } from "../services/user.service";
 import multer from "multer";
 import { UserExistsError } from "../utilities/errorHandlers";
@@ -40,7 +42,6 @@ router.post("/register", async (req, res, next) => {
 
 router.post("/authenticate", async (req, res) => {
   const { body } = req;
-
   authoriseUserService(body)
     .then((user) => {
       res.json(user);
@@ -51,6 +52,30 @@ router.post("/authenticate", async (req, res) => {
         .json({ message: e.message || "something went wrong" });
     });
 });
+
+router.post("/sendresetpasswordlink", async(req, res) => {
+  sendresetpasswordlinkservice(req.body)
+    .then((token) => {
+      res.json(token);
+    })
+    .catch((e) => {
+      res
+        .status(e.status || 500)
+        .json({ message: e.message || "something went wrong" });
+    });
+})
+
+router.post("/resetpassword" , async(req, res) => {
+  resetpasswordservice(req.body)
+    .then((response) => {
+      res.json(response)
+    })
+    .catch((e) => {
+      res
+        .status(e.status || 500)
+        .json({ message: e.message || "something went wrong" });
+    });
+})
 
 router.post("/", async (req, res) => {
   const { body, headers } = req;
@@ -135,4 +160,5 @@ router.get("/token", async (req, res) => {
     });
   }
 });
+
 module.exports = router;

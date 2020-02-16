@@ -8,6 +8,8 @@ const ResetpasswordComponent = ({ onInputChange, password, repeatPassword, Reset
 
   return (
     <div className="signUpContainer">
+      <div className="signUpLabel">Reset Password</div>
+      <div className="signUpText">Please enter your new password</div>
       <div className="inputContainer">
         <InputField
           id="password"

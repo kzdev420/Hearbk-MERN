@@ -7,6 +7,11 @@ import Button from "../../common/Button";
 const ForgotpasswordComponent = ({email, onInputChange, SendLink}) => {
   return (
     <div className="loginContainer">
+      <div className="loginLabel">Forgot Password</div>
+      <div className="loginText">
+        Please enter your email address.
+        The action will be expired after 10 minutes.
+      </div>
       <div className="inputContainer">
         <InputField
           id="email"

@@ -6,11 +6,26 @@ import {
   UnauthorisedRequestError,
   FileUploadError,
   UserExistsError,
+  UserDoesnotExistsError,
 } from "../utilities/errorHandlers";
 import { validateToken, generateAccessToken } from "../utilities/jwt";
 import uploadFileToPinnata from "../utilities/ipfsFileUpload";
 import { getObjectId } from "../connection";
 import { getPaymentMethods } from "../utilities/stripeHelper";
+
+let nodemailer = require('nodemailer');
+// create reusable transporter object using the default SMTP transport
+let transporter = nodemailer.createTransport({
+  host: "email-smtp.us-east-1.amazonaws.com",
+  port: 25,
+  secure: false, // true for 465, false for other ports
+  auth: {
+    user:"AKIAQDDNFVXG2QOWMJPV", // generated ethereal user
+    pass: "BJQA9yM/TL5LcXqs4zjwxjB42UNBj1RKEVTZ5dnlZk0E" // generated ethereal password
+  }
+});
+
+
 const { SALT_ROUNDS } = AppConstants;
 
 export const getUserDetails = async () => {
@@ -68,6 +83,60 @@ export const authoriseUserService = async (userQuery) => {
     }
   });
 };
+
+/** reset password */
+
+export const resetpasswordservice = async (userQuery) => {
+  const userid = userQuery.id;
+  return bcrypt
+    .hash(userQuery.password, SALT_ROUNDS)
+    .then(async (hash) => {
+      const User = new UserEntity();
+      const userData = await User.findOne({ userid });
+      if (!userData) {
+        throw new UserDoesnotExistsError();
+      }
+      const data = await userData.updateOne({ password: hash });
+      return {
+        id: data.insertedId,
+      };
+    })
+    .catch((e) => e);
+}
+
+/** send reset password link */
+
+export const sendresetpasswordlinkservice = async (userQuery) => {
+
+  const User = new UserEntity();
+  const userData = await User.findOne({ email: userQuery.email });
+  if(!userData){
+    throw new UserDoesnotExistsError();
+  }
+  const tokenData = await generateAccessToken({
+    email: userData.email,
+    _id: userData._id.toString(),
+  });
+  let mailOptions = {
+    from: '"<hearbk admin>" admin@hearbk.com',
+    to: userQuery.email,
+    subject: 'Reset your account password',
+    html: '<h4><b>Reset Password</b></h4>' +
+    '<p>To reset your password, complete this form:</p>' +
+    '<a href=' + 'https://hearbk.com/resetpassword/' + userData.id + '/' + token + '">' + 'https://hearbk.com/resetpassword/' + userData.id + '/' + tokenData + '</a>' +
+    '<br><br>' +
+    '<p>--Team</p>'
+  }
+
+  let mailSent = transporter.sendMail(mailOptions);
+  if(mailSent){
+    return {
+      token: tokenData,
+    };
+  } else{
+    return undefined;
+  }
+}
 
 /** update user details */
 

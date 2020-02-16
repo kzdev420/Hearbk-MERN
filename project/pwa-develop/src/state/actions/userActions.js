@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 const postRegisterUserURI = "/users/register";
 const postAuthenticateUserURI = "/users/authenticate";
 const postSendResetPasswordLink = "/users/sendresetpasswordlink";
+const ResetPasswordURL = "users/resetpassword";
 const postPreferencesURI = "/users";
 const getOrderHistoryUrl = "/orders/history";
 const getUserDetailsURI = "/users/details";
@@ -71,9 +72,14 @@ export const SendResetPasswordLink = (requestData) => (dispatch) =>
     .then((response)=>{
       if(response.ok){
         toast.success("Sent Link. Please Chenk Email Box");
-        return true
+        return response.json();
+      }
+      if(response.status == 401){
+        toast.error("User doesn't exits! Please Sign up");
+        return undefined;
       } else {
         toast.error("Failed, Invalid EmailAddress");
+        return undefined;
       }
     })
     .then((data) => {
@@ -90,7 +96,7 @@ export const SendResetPasswordLink = (requestData) => (dispatch) =>
     });
 
 export const ResetPasswordAction = (requestData, userid) => (dispatch) => {
-  fetch(`${api}${postRegisterUserURI}`, {
+  fetch(`${api}${ResetPasswordURL}`, {
     method: "POST",
     headers: genericHeaders(),
     body: JSON.stringify({

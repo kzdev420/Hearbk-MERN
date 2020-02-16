@@ -67,3 +67,12 @@ export class UserExistsError extends Error {
     }
 }
 
+export class UserDoesnotExistsError extends Error {
+    constructor(e) {
+        super(e);
+        console.log(e);
+        this.status = 401;
+        this.message = "User Doesn't exists !";
+    }
+}
+
