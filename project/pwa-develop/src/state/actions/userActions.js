@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 
 const postRegisterUserURI = "/users/register";
 const postAuthenticateUserURI = "/users/authenticate";
+const postSendResetPasswordLink = "/users/sendresetpasswordlink";
 const postPreferencesURI = "/users";
 const getOrderHistoryUrl = "/orders/history";
 const getUserDetailsURI = "/users/details";
@@ -60,6 +61,21 @@ export const registerUserAction = (requestData, file) => (dispatch) =>
         }
       }
     });
+
+export const SendResetPasswordLink = (requestData) =>
+  fetch(`${api}${postSendResetPasswordLink}`, {
+    method: "POST",
+    headers: genericHeaders(),
+    body: JSON.stringify(requestData),
+  })
+    .then((response)=>{
+      if(response.ok){
+        toast.success("Sent Link. Please Chenk Email Box");
+        return true
+      } else {
+        toast.error("Failed, Invalid EmailAddress");
+      }
+    })
 
 export const authenticateUser = (requestData) => (dispatch) =>
   fetch(`${api}${postAuthenticateUserURI}`, {
