@@ -1,0 +1,53 @@
+@import "../../scss/variables.scss";
+@import "../../scss/common.styles.scss";
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 60px 30px 0em 30px;
+
+  .loginLabel {
+    font-size: $font-size-xxl;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .loginText {
+    color: $main-2;
+    font-size: 18px;
+    font-weight: 300;
+  }
+  .rememberMeContainer {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .checkBoxStyle {
+      height: 17px;
+      width: 17px;
+      color: #e4e7f4;
+    }
+    .rememberMeText {
+      margin-left: 11px;
+      color: $main-2;
+      font-size: $font-size-small;
+      font-weight: 500;
+    }
+  }
+  .buttonWrapper {
+    margin-top: 30px;
+    .logInButton {
+      @extend .launchButton;
+    }
+  }
+  .forgotPassword {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    > span {
+      color: $color-1;
+      font-size: $font-size-small;
+      font-weight: 600;
+    }
+  }
+}

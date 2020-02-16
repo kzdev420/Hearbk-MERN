@@ -1,6 +1,7 @@
 import React from "react";
 import Checkbox from "rc-checkbox";
 import content from "./content";
+import {Link} from 'react-router-dom';
 import InputField from "../../common/InputField";
 import "./Login.styles.scss";
 import "rc-checkbox/assets/index.css";
@@ -47,8 +48,10 @@ const LoginComponent = ({ email, password, onInputChange, loginUser }) => {
           onClick={loginUser}
         ></Button>
       </div>
-      <div className="forgotPassword" style={{ display: "none" }}>
-        <span>{content.FORGOT_PASSWORD}</span>
+      <div className="forgotPassword">
+        <Link to="/forgotpassword">
+          FORGOT PASSWORD
+        </Link>
       </div>
     </div>
   );

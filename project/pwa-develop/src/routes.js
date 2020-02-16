@@ -11,6 +11,7 @@ import SettingsContainer from "./containers/Settings";
 import OrderFeedbackHistoryContainer from "./containers/OrderFeedbackHistory";
 import OrderFeedbackStart from "./containers/OrderFeedbackStart";
 import { getTokenDetails } from "./state/actions/userActions";
+import Forgotpassword from "./containers/Forgotpassword";
 
 export default (props) => {
   return (
@@ -18,6 +19,7 @@ export default (props) => {
       <Switch>
         <Route path="/" component={LandingPage} exact />
         <Route path="/signin" component={AuthContainer} exact />
+        <Route path="/forgotpassword" component={Forgotpassword} />
         <Route path="/discover" component={withValidToken(Discover)} exact />
         <Route path="/feedback" component={withValidToken(OrderFeedbackContainer)} exact />
         <Route
