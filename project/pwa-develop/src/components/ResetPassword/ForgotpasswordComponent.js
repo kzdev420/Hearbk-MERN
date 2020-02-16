@@ -10,7 +10,7 @@ const ForgotpasswordComponent = ({email, onInputChange, SendLink}) => {
       <div className="loginLabel">Forgot Password</div>
       <div className="loginText">
         Please enter your email address.
-        The action will be expired after 10 minutes.
+        The action will be expired after an hour.
       </div>
       <div className="inputContainer">
         <InputField
