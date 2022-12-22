@@ -20,7 +20,7 @@
     "express": "~4.16.1",
     "helmet": "^3.21.2",
     "ipfs-api": "^26.1.2",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "lodash": "^4.17.15",
     "mongodb": "^3.4.0",
     "morgan": "~1.9.1",
